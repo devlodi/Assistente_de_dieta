@@ -27,12 +27,6 @@
         <p id="almoco-choice"></p>
     </div>
 
-    <div id="janta" class="meal">
-        <h2>Janta</h2>
-        <button onclick="chooseMeal('janta')">O que comer?</button>
-        <p id="janta-choice"></p>
-    </div>
-
     <div id="lanche15" class="meal">
         <h2>Lanche das 15h</h2>
         <button onclick="chooseMeal('lanche15')">O que comer?</button>
@@ -44,6 +38,17 @@
         <button onclick="chooseMeal('lanche17')">O que comer?</button>
         <p id="lanche17-choice"></p>
     </div>
+
+     <div id="janta" class="meal">
+        <h2>Janta</h2>
+        <button onclick="chooseMeal('janta')">O que comer?</button>
+        <p id="janta-choice"></p>
+    </div>
+
+    <button onclick="copyAllMeals()">Copiar Todas as Refeições</button>
+
+    <button onclick="clearMeals()">Limpar Todas as Refeições</button>
+
 
     <script src="script.js"></script> <!-- Link para o seu arquivo JavaScript -->
 </body>

@@ -36,19 +36,29 @@ function chooseMeal(mealType) {
 }
 
 
-// Função para copiar a sugestão de refeição para a área de transferência
-function copyToClipboard(mealType) {
-    const choiceText = document.getElementById(`${mealType}-choice`).innerText;
-    navigator.clipboard.writeText(choiceText).then(() => {
-        alert("Refeição copiada para a área de transferência!");
+// Função para copiar todas as refeições
+function copyAllMeals() {
+    const mealTypes = ['desjejum', 'lanche10', 'almoco', 'janta', 'lanche15', 'lanche17']; // Adapte conforme necessário
+    let allMealsText = "";
+
+    mealTypes.forEach(type => {
+        const mealText = document.getElementById(`${type}-choice`).innerText;
+        if (mealText) {
+            allMealsText += `${type.toUpperCase()}: ${mealText}\n`; // Formata o texto
+        }
+    });
+
+    navigator.clipboard.writeText(allMealsText).then(() => {
+        alert("Todas as refeições foram copiadas para a área de transferência!");
     });
 }
 
-// Função para limpar todas as refeições do Local Storage
+// Função para limpar as refeições
 function clearMeals() {
     if (confirm("Tem certeza que deseja apagar todas as refeições?")) {
-        localStorage.clear(); // Limpa o Local Storage
-        // Limpa as escolhas de refeições na página, se necessário
-        // Exemplo: document.getElementById(`${mealType}-choice`).innerHTML = "";
+        localStorage.clear();
+        // Limpa as escolhas de refeição na página
+        const mealTypes = ['desjejum', 'lanche10', 'almoco', 'janta', 'lanche15', 'lanche17']; // Adapte conforme necessário
+        mealTypes.forEach(type => document.getElementById(`${type}-choice`).innerHTML = "");
     }
 }

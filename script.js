@@ -12,7 +12,10 @@ const meals = {
     lanche17: ["Uma Laranja", "Maçã", "Pera Caioba", "Bergamota", "Kiwi", "Lima", "Pessegão", "Ameixa", "Figo", "150 g de Melão", "Melancia", "Moranguinho", "Abacaxi", "Uva", "Mamão"]
 };
 function chooseMeal(mealType) {
-    let choiceText = "";
+     let choiceText = "";
+    // Lógica existente para gerar a sugestão de refeição...
+    localStorage.setItem(mealType, choiceText); // Salva a escolha no Local Storage
+    document.getElementById(`${mealType}-choice`).innerHTML = choiceText;
 
     // Verifica se a refeição tem múltiplas partes (desjejum, almoço, janta)
     if (mealType === 'desjejum' || mealType === 'almoco' || mealType === 'janta') {
@@ -30,4 +33,22 @@ function chooseMeal(mealType) {
     }
 
     document.getElementById(`${mealType}-choice`).innerHTML = choiceText;
+}
+
+
+// Função para copiar a sugestão de refeição para a área de transferência
+function copyToClipboard(mealType) {
+    const choiceText = document.getElementById(`${mealType}-choice`).innerText;
+    navigator.clipboard.writeText(choiceText).then(() => {
+        alert("Refeição copiada para a área de transferência!");
+    });
+}
+
+// Função para limpar todas as refeições do Local Storage
+function clearMeals() {
+    if (confirm("Tem certeza que deseja apagar todas as refeições?")) {
+        localStorage.clear(); // Limpa o Local Storage
+        // Limpa as escolhas de refeições na página, se necessário
+        // Exemplo: document.getElementById(`${mealType}-choice`).innerHTML = "";
+    }
 }

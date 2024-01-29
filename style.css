@@ -1,0 +1,59 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+}
+
+h1 {
+    color: #2c3e50; /* Cor mais sofisticada */
+    font-size: 24px; /* Tamanho de fonte maior */
+}
+
+.meal {
+    margin: 20px;
+    padding: 20px;
+    border: none; /* Sem bordas */
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+    width: 320px; /* Largura ajustada */
+    background-color: #ffffff; /* Fundo branco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.meal:hover {
+    transform: translateY(-5px); /* Efeito de flutuação ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra mais proeminente ao passar o mouse */
+}
+
+button {
+    margin: 10px;
+    padding: 10px 15px; /* Padding maior para um botão mais amplo */
+    background-color: #3498db; /* Cor mais vibrante */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Bordas mais arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+button:hover {
+    background-color: #2980b9; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilos adicionais para parágrafos e links, se necessário */
+p {
+    color: #333; /* Cor de texto padrão */
+}
+
+a {
+    color: #3498db; /* Cor de links que combina com os botões */
+    text-decoration: none; /* Sem sublinhado */
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
